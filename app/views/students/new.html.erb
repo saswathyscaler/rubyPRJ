@@ -1,2 +1,7 @@
-<h1>Students#new</h1>
-<p>Find me in app/views/students/new.html.erb</p>
+<h1>Students Create </h1>
+
+<%= form_with model: @student do |f|%>
+<%= f.text_field :name, placeholder: "Enter Your name "%> <br>
+<%= f.text_field :age, placeholder: "Enter Your Age "%><br>
+<%= f.submit%>
+<%end%>
