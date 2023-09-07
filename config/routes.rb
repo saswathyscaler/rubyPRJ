@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :products, only: [:index, :show, :create, :update, :destroy]
-    end
-  end
-  
-  # get 'students/index'
+  devise_for :user1s
+  devise_for :users
+
+    # get 'students/index'
   # get 'students/show'
   # get 'students/edit'
   # get 'students/new'
 
 
   resources:students
+
+  resources :posts
+
+
+  namespace :api do
+    namespace :v1 do
+      resources :products, only: [:index, :show, :create, :update, :destroy]
+    end
+  end
+  
+
 
 
 
@@ -22,4 +30,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  root to: "posts#index"
 end

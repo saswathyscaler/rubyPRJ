@@ -2,7 +2,6 @@ class Api::V1::ProductsController < ApplicationController
 
   # GET ALL PRODUCTS
 
-
   def index
     products = Product.all
     render json: products, status: 200
@@ -74,12 +73,9 @@ end
   end
 
 
-
   private
   def prod_params
     params.require(:product).permit(:name, :brand, :price)
   end
-
-
 end
 
